@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="icon" href="https://media.discordapp.net/attachments/757169876451196969/822455987289980968/kotik.png">
+	<title>Лента обновлений</title>
+</head>
+
+<body>
+	<div class="preloader">
+		<img src="images/icon-bot.png" alt="">
+	</div>
+	<nav>
+		<p class="nav__btn" id="nav__btn-toggle" onclick="navToggle()">
+			<span></span>
+		</p>
+		<div class="nav__links" id="nav__links-toggle">
+			<a href="index.html" class="nav__link">Главная</a>
+			<a href="commands.html" class="nav__link">Команды</a>
+		</div>
+	</nav>
+	<div class="u-header">
+		<div class="u-header__title">Лента новостей</div>
+		<div class="u-header__desc">Все обновления бота и сайта</div>
+	</div>
+	<div class="logs">
+		<!--
+		<div class="logs__item">
+			<div class="logs__top" onclick="ReadMore(this, 'logs__bottom-active')">
+				<div class="logs__version"></div>
+				<div class="logs__date"></div>
+			</div>
+			<div class="logs__bottom">
+				<div class="logs__chapter">
+					<div class="chapter__title"></div>
+					<div class="chapter__list">
+						<div class="chapter__item"></div>
+					</div>
+				</div>
+				<div class="logs__chapter logs__problems">
+					<div class="chapter__title"></div>
+					<div class="chapter__list">
+						<div class="chapter__item"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		-->
+		<!--
+		Разделы:
+		 * Исправление багов
+		 * Обновление команд
+         * Неисправленные баги
+		 * Удалено с бота
+		 * Обновление бота
+		-->
+		<!-- alfa 7.8 -->
+		<div class="logs__item">
+			<div class="logs__top" onclick="ReadMore(this, 'logs__bottom-active')">
+				<div class="logs__version">Бета 0.7.8</div>
+				<div class="logs__date"></div>
+			</div>
+			<div class="logs__bottom">
+				<div class="logs__chapter">
+					<div class="chapter__title">Обновление сайта</div>
+					<div class="chapter__list">
+						<div class="chapter__item">Сайт был перенесен на новый домен <code>https://kotikbot.github.io</code></div>
+						<div class="chapter__item">Вышел первый релиз сайта до <code>v1.0.0</code></div>
+					</div>
+				</div>
+				<!-- div class="logs__chapter logs__problems">
+					<div class="chapter__title"></div>
+					<div class="chapter__list">
+						<div class="chapter__item"></div>
+					</div>
+				</ -->
+			</div>
+		</div>
+		<!-- beta 7.7 -->
+		<div class="logs__item">
+			<div class="logs__top" onclick="ReadMore(this, 'logs__bottom-active')">
+				<div class="logs__version">Версия 0.7.7</div>
+				<div class="logs__date">31.12.2020</div>
+			</div>
+			<div class="logs__bottom">
+				<div class="logs__chapter">
+					<div class="chapter__title">Появился сайт поддержки бота <code>https://maksim990.github.io</code></div>
+				</div>
+				<div class="logs__chapter">
+					<div class="chapter__title">Исправление багов</div>
+					<div class="chapter__list">
+						<div class="chapter__item">Исправлены баги с командой <code>warn</code></div>
+						<div class="chapter__item">Бот теперь постоянно в сети</div>
+						<div class="chapter__item">Упращена команда <code>help</code></div>
+						<div class="chapter__item">При использовании команды <code>avatar</code> нет никакого кода</div>
+					</div>
+				</div>
+				<div class="logs__chapter">
+					<div class="chapter__title">Обновление команд</div>
+					<div class="chapter__list">
+						<div class="chapter__item">Новая команда в экономике <code>work</code></div>
+					</div>
+				</div>
+				<div class="logs__chapter">
+					<div class="chapter__title">Удалено с бота</div>
+					<div class="chapter__list">
+						<div class="chapter__item">Удален фраза: <code>Ага,а хер те</code></div>
+					</div>
+				</div>
+				<div class="logs__chapter logs__problems">
+					<div class="chapter__title">Неисправленные баги</div>
+					<div class="chapter__list">
+						<div class="chapter__item">Нет пробелов после <code>:</code> в инфо командах</div>
+						<div class="chapter__item">Ошибки команд пишуться текстом вместо ембеда</div>
+						<div class="chapter__item">Бот не пишет если ему не хватает разрешений</div>
+						<div class="chapter__item">Цвет ембеда всегда черный</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- beta 7.6 -->
+		<div class="logs__item">
+			<div class="logs__top" onclick="ReadMore(this, 'logs__bottom-active')">
+				<div class="logs__version">Версия 0.7.6</div>
+				<div class="logs__date">31.12.2020</div>
+			</div>
+			<div class="logs__bottom">
+				<div class="logs__chapter">
+					<div class="chapter__title">Исправление багов</div>
+					<div class="chapter__list">
+						<div class="chapter__item">Исправлена ошибка в команде <code>balance</code>, при котором не показывало число 0</div>
+						<div class="chapter__item">Исправлены баги с тем что он сначала сохранял а потом выполнял действия</div>
+						<div class="chapter__item">Упращена команда <code>help</code></div>
+						<div class="chapter__item">Исправлена ошибка в команде <code>clear</code>, + сделано оформление</div>
+					</div>
+				</div>
+				<div class="logs__chapter">
+					<div class="chapter__title">Обновление команд</div>
+					<div class="chapter__list">
+						<div class="chapter__item">К <code>work</code></div>
+					</div>
+				</div>
+				<div class="logs__chapter">
+					<div class="chapter__title">Удалено с бота</div>
+					<div class="chapter__list">
+						<div class="chapter__item">Удален фраза: <code>Ага,а хер те</code></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- beta7.5 -->
+		<div class="logs__item">
+			<div class="logs__top" onclick="ReadMore(this, 'logs__bottom-active')">
+				<div class="logs__version">Версия 0.7.5</div>
+				<div class="logs__date">24.12.2020</div>
+			</div>
+			<div class="logs__bottom">
+				<div class="logs__chapter">
+					<div class="logs__chapter">
+						<div class="chapter__title">Исправление багов</div>
+						<div class="chapter__list">
+							<div class="chapter__item">Работает баланс в экономике</div>
+							<div class="chapter__item">Все команды до единой исправлены</div>
+						</div>
+					</div>
+					<div class="chapter__list">
+						<div class="chapter__title">Обновление команд</div>
+						<div class="chapter__item">Появилась категория <code>game</code> скоро будет сделана мини игра</div>
+						<div class="chapter__item">Появилась команда <code>фан-команды</code></div>
+						<div class="chapter__item">Команда <code>help</code> разделена на категории</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- beta7.4 -->
+		<div class="logs__item">
+			<div class="logs__top" onclick="ReadMore(this, 'logs__bottom-active')">
+				<div class="logs__version">Версия 0.7.4</div>
+				<div class="logs__date">17.12.2020</div>
+			</div>
+			<div class="logs__bottom">
+				<div class="logs__chapter">
+					<div class="logs__chapter">
+						<div class="chapter__title">Исправление багов</div>
+						<div class="chapter__list">
+							<div class="chapter__item">Все команды снова работают</div>
+						</div>
+					</div>
+				</div>
+				<div class="logs__chapter logs__problems">
+					<div class="chapter__title">Обновление команд</div>
+					<div class="chapter__list">
+						<div class="chapter__item">Команда <code>mute</code> в разработке</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- beta 7.3 -->
+		<div class="logs__item">
+			<div class="logs__top" onclick="ReadMore(this, 'logs__bottom-active')">
+				<div class="logs__version">Версия 0.7.3</div>
+				<div class="logs__date">16.12.2020</div>
+			</div>
+			<div class="logs__bottom">
+				<div class="logs__chapter">
+					<div class="chapter__title">Исправление багов</div>
+					<div class="chapter__list">
+						<div class="chapter__item">Исправлена команда <code>serverinfo</code></div>
+						<div class="chapter__item">Исправлена команда <code>idea</code></div>
+					</div>
+				</div>
+				<div class="logs__chapter logs__problems">
+					<div class="chapter__title">Неисправленные баги</div>
+					<div class="chapter__list">
+						<div class="chapter__item">Бот после 2 дней уходит в фоновый режим, не отвечает, но работает</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- beta 7.2 -->
+		<div class="logs__item">
+			<div class="logs__top" onclick="ReadMore(this, 'logs__bottom-active')">
+				<div class="logs__version">Версия 0.7.2</div>
+				<div class="logs__date">11.12.2020</div>
+			</div>
+			<div class="logs__bottom">
+				<div class="logs__chapter">
+					<div class="chapter__title">Исправление багов</div>
+					<div class="chapter__list">
+						<div class="chapter__item">Исправлена проблема в команде <code>uptime</code>. Слишком быстро считал секунды</div>
+						<div class="chapter__item">Исправлен текст в команде <code>help</code></div>
+					</div>
+				</div>
+				<div class="logs__chapter">
+					<div class="chapter__title">Обновление команд</div>
+					<div class="chapter__list">
+						<div class="chapter__item">Добавлена статистика памяти в команду <code>botinfo</code></div>
+						<div class="chapter__item">Убраны милисекунды в команде <code>uptime</code></div>
+					</div>
+				</div>
+				<div class="logs__chapter logs__problems">
+					<div class="chapter__title">Неисправленные команды</div>
+					<div class="chapter__list">
+						<div class="chapter__item">В команде <code>avatar</code>, скидывается код</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- beta 7.1 -->
+		<div class="logs__item">
+			<div class="logs__top" onclick="ReadMore(this, 'logs__bottom-active')">
+				<div class="logs__version">Версия 0.7.1</div>
+				<div class="logs__date">24.10.2020</div>
+			</div>
+			<div class="logs__bottom">
+				<div class="logs__chapter">
+					<div class="chapter__title">Обновление команд</div>
+					<div class="chapter__list">
+						<div class="chapter__item">Теперь есть в ембеде емодзи</div>
+						<div class="chapter__item">Исправлены команды <code>ban</code>, <code>kick</code>, <code>warn</code>, <code>unwarn</code>, <code>mute</code>, <code>unmute</code></div>
+						<div class="chapter__item">При приглашения на новый сервер, бот отправит вам в лс <code>Привет! Я Котик, мой префикс - . </code></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- beta 7.0 -->
+		<div class="logs__item">
+			<div class="logs__top" onclick="ReadMore(this, 'logs__bottom-active')">
+				<div class="logs__version">Версия 0.7.0</div>
+				<div class="logs__date">19.10.2020</div>
+			</div>
+			<div class="logs__bottom">
+				<div class="logs__chapter">
+					<div class="chapter__title">Обновление команд</div>
+					<div class="chapter__list">
+						<div class="chapter__item">Изменилась команда <code>botinfo</code></div>
+						<div class="chapter__item">Изменилась команда <code>help</code></div>
+						<div class="chapter__item">Добавлена команда <code>serverinfo</code></div>
+						<div class="chapter__item">Добавлена команда <code>userinfo</code></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup">
+    	<div class="popup__window">
+    		<h2 class="popup__title">Внимание!</h2>
+    		<p>Ваша версия браузера устаревшая, на сайте могут быть проблемы</p>
+    		<div onclick="popupToggle()" class="popup__btn">Закрыть</a>
+    	</div>
+    </div>
+	<script src="script.js"></script>
+</body>
+</html>

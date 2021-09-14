@@ -1,57 +1,150 @@
 <!DOCTYPE html>
 <html lang="ru">
-	<head>
-		<meta charset="utf-8">
-		<meta property="og:title" content="Сайт поддержки бота Котик">
-		<meta property="og:description" content="Сайт где вы сможете найти что возможно :)">
-        <meta property="telegram:description" content="test">
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-		<link rel="shortcut icon" href="RusPack/ico/kotik.ico" type="image/x-icon">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+	<link rel="icon" href="https://cdn.discordapp.com/attachments/757169876451196969/822455987289980968/kotik.png">
+	<meta property="og:title" content="Сайт поддержки бота Котик" />
+	<meta property="og:type" content="Клик" />
+	<meta property="og:url" content="https://discord.com/api/oauth2/authorize?client_id=710154733679018104&permissions=8&&scope=bot"/>
+	<meta property="og:image" content="/images/thumb.png" />
+	<meta property="og:description" content="Здесь можно посмотреть обновления, команды, и статистику бота" />
+	<meta name="theme-color" content="#FF0000">
+	<link type="application/json+oembed" href="oembed.json" />
+	<meta name="twitter:card" content="summary_large_image">
+	<title>Главная страница</title>
+</head>
+<body>
+	<div class="preloader">
+		<img src="images/icon-bot.png" alt="">
+	</div>
+	<nav>
+		<p class="nav__btn" id="nav__btn-toggle" onclick="navToggle()">
+			<span></span>
+		</p>
+		<div class="nav__links" id="nav__links-toggle">
+			<a href="update.html" class="nav__link">Лента</a>
+			<a href="commands.html" class="nav__link">Команды</a>
+		</div>
+	</nav>
+	<header>
+		<div class="header__photo header__photo-offline">
+			<img src="images/icon-bot.png" alt="">
+			<span></span>
+		</div>
+		<div class="header__text">
+			<h1 class="header__title">Бот Котик</h1>
+			<p class="header__desc">Супер надоедливый кот</p>
+			<a href="https://discord.com/api/oauth2/authorize?client_id=710154733679018104&permissions=8&&scope=bot" class="header__btn">Пригласить</a>
+    </div>
+     
+		</div>
+	</header>
+	<div class="welcome">
+		<h2 class="welcome__title title">Добро пожаловать</h2>
+		<div class="welcome__items">
+			<div class="welcome__item">
+				<img src="images/icon-admins.png" alt="">
+				<div class="welcome__text">
+					<h3 class="welcome__name">Будьте лучшим админом</h3>
+					<div class="welcome__desc">Предупреждайте, баньте или выгоняйте игроков! Но только в крайнем случее, мы же добрые, да?</div>
+				</div>
+			</div>
+			<div class="welcome__item">
+				<img src="images/icon-money.png" alt="">
+				<div class="welcome__text">
+					<h3 class="welcome__name">Деньги не главное</h3>
+					<div class="welcome__desc">Наш бот совершенно бесплатный! Да, да вам не послышалось, нам нравиться сам процес работы</div>
+				</div>
+			</div>
+			<div class="welcome__item">
+				<img src="images/icon-shop.png" alt="">
+				<div class="welcome__text">
+					<h3 class="welcome__name">Магазин чудес</h3>
+					<div class="welcome__desc">Удобная панель создания предметов в магазине! Так что легко создавайте свой ашан Котландии</div>
+				</div>
+			</div>
+			<div class="welcome__item">
+				<img src="images/icon-ideas.png" alt="">
+				<div class="welcome__text">
+					<h3 class="welcome__name">Нам нужны идеи</h3>
+					<div class="welcome__desc">Если вдруг вы заметили баг, бегом пишите боту. Если же вас осенила идея - пиши и получи роль на нашем сервере</div>
+				</div>
+			</div>
+			<div class="welcome__item">
+				<img src="images/icon-games.png" alt="">
+				<div class="welcome__text">
+					<h3 class="welcome__name">Не забудь про игры</h3>
+					<div class="welcome__desc">Играй в кликер, змейку или тетрис. Но при проигрыше не разнеси сервер, будет жалко его потерять</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="numbers">
+		<div class="numbers__title title">Цифры не соврут</div>
+		<div class="numbers__item">
+			<img src="images/icon-days.png" alt="">
+			<div class="numbers__num">1</div>
+			<div class="numbers__desc">Дней в сети</div>
+		</div>
+		<div class="numbers__item">
+			<img src="images/icon-commands.png" alt="">
+			<div class="numbers__num">34</div>
+			<div class="numbers__desc">Команд</div>
+		</div>
+		<div class="numbers__item">
+			<img src="images/icon-people.png" alt="">
+			<div class="numbers__num">-</div>
+			<div class="numbers__desc">Пользователей</div>
+		</div>
+	</div>
+	<div class="dev">
+		<div class="dev__title title">О создателях</div>
+		<div class="dev__item dev__item-first">
+			<img src="images/avatar1.png" alt="">
+			<div class="dev__text">
+				<div class="dev__name">Elias</div>
+				<div class="dev__desc">Создатель данного сайта</div>
+				<div class="dev__discord">Discord: E'lias#7777</div>
+			</div>
+			
+		</div>
+		<div class="dev__item">
+			<img src="images/avatar2.png" alt="">
+			<div class="dev__text">
+				<div class="dev__name">Котик</div>
+				<div class="dev__desc">Создатель данного бота</div>
+				<div class="dev__discord">Discord: Котик#9821</div>
+			</div>
 
-		<link rel="stylesheet" href="RusPack/css/jump.css">
-		<link rel="stylesheet" href="RusPack/css/protection.css">
-		<link rel="stylesheet" href="RusPack/css/index.css">
-		<link rel="stylesheet" href="RusPack/css/window.css">
-		<script src="https://code.jquery.com/jquery-1.4.4.min.js"></script>
-		<script src="RusPack/js/index.js"></script>
-		<script src="RusPack/js/protection.js"></script>
-		<script src="RusPack/js/jump.js"></script>
-		<script src="RusPack/js/window.js"></script>
-		<title>kotik</title>
-	</head>
-	<body>
-		<div id="mySidenav" class="sidenav">
-			<a href="#" style="color:yellow">Главная</a>
-			<a href="index1.html" class="fade">Обновлении</a>
-			<a href="index2.html" class="fade">Лента</a>
-			<a href="index3.html" class="fade">Активность бота</a>
-			<a href="index4.html" class="fade">Пригласить бота</a>
-            <p style="color:grey">alfa0.07</p>
-			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Закрыть</a>
 		</div>
-		<div class="block">
-			<span onclick="openNav()"><img src="RusPack/images/menu.png"></span>
-		</div>
-		<div id="main">
-			<h1 class="align">Сайт Поддержки бота Котик</h1>
-			<div class="block">
-				<div class="align">
-					<img class="locked" src="RusPack/images/kotik.png" width="230px" alt="kotikIcon">
-				</div>
+	</div>
+	<div class="invite">
+		<div class="invite__title title">Пригласить бота</div>
+		
+		</a>
+		<div class="invite__bot">
+			<img src="images/cat-gif.gif" alt="" class="invite__img" >
+			<div class="invite__menu">
+				<p>Выбрать сервер</p>
+				<span>Функция в разработке</span>
 			</div>
+			
+			<a href="https://discord.com/api/oauth2/authorize?client_id=710154733679018104&permissions=8&&scope=bot" class="invite__btn">Добавить бота</a>
 		</div>
-		<div class="block">
-			<h3><b>Версия браузера:</b></h3>
-			<h3><b>Платформа:</b></h3>
-			<h3><b>Ваш айпи адрес:---.---.--.--</b></h3>
-			<h3><b>Скорость интернета:-байт/с</b></h3>
-			<button type="button" class="btn" onclick="FuncImages()">Старт</button>
-			<div id="main2">
-				<div class="block-red">
-					<h1><b>Упс...<span><img src="RusPack/images/error.png" width="100px" class="right-img" alt="error"></span></b></h1>
-					<h3><b>Посмотреть не реально, потому что я ещё нехера этого не сделал</b></h3>
-				</div>
-			</div>
-		</div>
-	</body>
+
+        <iframe src="https://discord.com/widget?id=749268254702174288&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+	</div>
+
+	<div class="popup">
+    	<div class="popup__window">
+    		<h2 class="popup__title">Внимание!</h2>
+    		<p>Ваша версия браузера устаревшая, на сайте могут быть проблемы</p>
+    		<div onclick="popupToggle()" class="popup__btn">Закрыть</a>
+    	</div>
+    </div>
+	<script src="script.js"></script>
+</body>
 </html>
