@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<link rel="icon" href="images/icon-bot.png">
+	<meta property="og:title" content="Сайт поддержки бота Котик" />
+	<meta property="og:type" content="Клик" />
+	<meta property="og:url"
+		content="https://discord.com/api/oauth2/authorize?client_id=710154733679018104&permissions=8&&scope=bot" />
+	<meta property="og:image" content="images/banner.png" />
+	<meta property="og:description" content="Здесь можно посмотреть обновления, команды и статистику бота" />
+	<meta name="theme-color" content="#FFFF00">
+	<link type="application/json+oembed" href="oembed.json" />
+	<meta name="twitter:card" content="summary_large_image">
+	<title>Главная страница</title>
+</head>
+
+<body>
+	<div class="preloader">
+		<img src="images/icon-bot.png" alt="">
+	</div>
+	<nav>
+		<p class="nav__btn" id="nav__btn-toggle" onclick="navToggle()">
+			<span></span>
+		</p>
+		<div class="nav__links" id="nav__links-toggle">
+			<a href="update.html" class="nav__link">Лента</a>
+			<a href="commands.html" class="nav__link">Команды</a>
+		</div>
+	</nav>
+	<header>
+		<div class="header__photo header__photo-offline">
+			<img src="images/icon-bot.png" alt="">
+			<span></span>
+		</div>
+		<div class="header__text">
+			<h1 class="header__title">Бот Котик</h1>
+			<p class="header__desc">Супер надоедливый кот</p>
+			<a href="#invitebot" class="header__btn">Пригласить</a>
+		</div>
+
+		</div>
+	</header>
+	<div class="welcome">
+		<h2 class="welcome__title title">Добро пожаловать</h2>
+		<div class="welcome__items">
+			<div class="welcome__item">
+				<img src="images/icon-admins.png" alt="">
+				<div class="welcome__text">
+					<h3 class="welcome__name">Будьте лучшим админом</h3>
+					<div class="welcome__desc">Предупреждайте, баньте или выгоняйте игроков! Но только в крайнем случее,
+						мы же добрые, да?</div>
+				</div>
+			</div>
+			<div class="welcome__item">
+				<img src="images/icon-money.png" alt="">
+				<div class="welcome__text">
+					<h3 class="welcome__name">Деньги не главное</h3>
+					<div class="welcome__desc">Наш бот совершенно бесплатный! Да-да, вам не послышалось - нам нравится сам процесс работы</div>
+				</div>
+			</div>
+			<div class="welcome__item">
+				<img src="images/icon-shop.png" alt="">
+				<div class="welcome__text">
+					<h3 class="welcome__name">Магазин чудес</h3>
+					<div class="welcome__desc">Удобная панель создания предметов в магазине! Так что легко создавайте
+						свой ашан Котландии</div>
+				</div>
+			</div>
+			<div class="welcome__item">
+				<img src="images/icon-ideas.png" alt="">
+				<div class="welcome__text">
+					<h3 class="welcome__name">Нам нужны идеи</h3>
+					<div class="welcome__desc">Если вдруг вы заметили баг, бегом пишите боту. Если же вас осенила идея -
+						пиши и получи роль на нашем сервере</div>
+				</div>
+			</div>
+			<div class="welcome__item">
+				<img src="images/icon-games.png" alt="">
+				<div class="welcome__text">
+					<h3 class="welcome__name">Не забудь про игры</h3>
+					<div class="welcome__desc">Играй в кликер, змейку или тетрис. Но при проигрыше не разнеси сервер,
+						будет жалко его потерять</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="numbers">
+		<div class="numbers__title title">Цифры не соврут</div>
+		<div class="numbers__servers">
+			<div class="servers__name">Серверов/Макс</div>
+			<div class="server__progress-bar">
+				<div class="servers__num" id="num__servers">123</div>
+				<span class="servers__progress"></span>
+			</div>
+
+		</div>
+		<div class="numbers__items">
+			<div class="numbers__item">
+				<img src="images/icon-days.png" alt="">
+				<div class="numbers__num" id="num__days"></div>
+				<div class="numbers__desc">Дней в сети</div>
+			</div>
+			<div class="numbers__item">
+				<img src="images/icon-commands.png" alt="">
+				<div class="numbers__num" id="num__commands"></div>
+				<div class="numbers__desc">Команд</div>
+			</div>
+			<div class="numbers__item">
+				<img src="images/icon-people.png" alt="">
+				<div class="numbers__num" id="num__users"></div>
+				<div class="numbers__desc">Пользователей</div>
+			</div>
+		</div>
+	</div>
+	<div class="dev">
+		<div class="dev__title title">О создателях</div>
+		<div class="dev__item dev__item-first">
+			<img src="https://cdn.discordapp.com/avatars/461109829897945108/465d997679ce9bde2366cfd02c24ecbc.png?size=80" alt="">
+			<div class="dev__text">
+				<div class="dev__name">Elias</div>
+				<div class="dev__desc">Создатель сайта</div>
+				<div class="dev__social">Discord: E'lias#7777</div>
+			</div>
+
+		</div>
+		<div class="dev__item">
+			<img src="https://cdn.discordapp.com/avatars/674804276643495939/2c76fb227171be07f4b4b9aa685892bf.png?size=80" alt="">
+			<div class="dev__text">
+				<div class="dev__name">Котик</div>
+				<div class="dev__desc">Создатель бота</div>
+				<div class="dev__social">Discord: Котик#9821</div>
+				<div class="dev__social">GitHub: maksim990</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="invite">
+		<div class="invite__title title">Пригласить бота</div>
+
+		</a>
+		<div class="invite__bot" id="invitebot">
+			<img src="images/cat-gif.gif" alt="" class="invite__img">
+			<div class="invite__menu">
+				<p>Выбрать сервер</p>
+				<span>Функция в разработке</span>
+			</div>
+
+			<a href="https://discord.com/api/oauth2/authorize?client_id=710154733679018104&permissions=8&&scope=bot"
+			    class="invite__btn">Добавить бота</a>
+		</div>
+
+        <h1>(Обновление виджета...)</h1>
+		<!--iframe src="https://discord.com/widget?id=749268254702174288&theme=dark" width="350" height="500"
+			allowtransparency="true" frameborder="0"
+			sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe-->
+	</div>
+
+	<div class="popup">
+		<div class="popup__window">
+			<h2 class="popup__title">Внимание!</h2>
+			<p>Ваша версия браузера устаревшая, на сайте могут быть проблемы</p>
+			<div onclick="popupToggle()" class="popup__btn">Закрыть</a>
+			</div>
+		</div>
+		<script src="script.js"></script>
+</body>
+
+</html>

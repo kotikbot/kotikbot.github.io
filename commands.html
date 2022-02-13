@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="icon" href="images/icon-bot.png">
+	<title>Команды бота</title>
+</head>
+
+<body>
+	<div class="preloader">
+		<img src="images/icon-bot.png" alt="">
+	</div>
+	<nav>
+		<p class="nav__btn" id="nav__btn-toggle" onclick="navToggle()">
+			<span></span>
+		</p>
+		<div class="nav__links" id="nav__links-toggle">
+			<a href="index.html" class="nav__link">Главная</a>
+			<a href="update.html" class="nav__link">Лента</a>
+		</div>
+	</nav>
+	<div class="c-header">
+		<div class="c-header__title">Команды бота</div>
+		<div class="c-header__desc">Описание и примениние всех команд бота</div>
+	</div>
+	<div class="commands">
+		<div class="commands__wrapper">
+			<div class="commands__left">
+				<div class="commands__chapters">
+					<div class="commands__chapter commands__chapter-active" onclick="enableChapter('standart', this)">Стандартные</div>
+					<div class="commands__chapter" onclick="enableChapter('admin', this)">Администрирование</div>
+					<div class="commands__chapter" onclick="enableChapter('dev', this)">Связь с разработчиком</div>
+					<div class="commands__chapter" onclick="enableChapter('economics', this)">Экономика</div>
+					<div class="commands__chapter" onclick="enableChapter('games', this)">Игры</div>
+				</div>
+				<div class="commands__guide">
+					<div class="commands__title">Использование команд</div>
+					<p class="commands__guideline"><code>[ параметр ]</code> - необязательный параметр</p>
+					<p class="commands__guideline"><code>
+							< параметр>
+						</code> - обязательный параметр</p>
+					<p class="commands__guideline"><code>
+							< параметр1 | параметр2>
+						</code> - параметр на выбор</p>
+					<p class="commands__guideline"><code>.</code> - префикс команд по умолчанию</p>
+					<div class="commands__guideline commands__guideline-set">
+						<img src="images/settings.svg" alt="">
+						<p> - параметр настройки</p>
+					</div>
+				</div>
+			</div>
+			<div class="commands__right">
+				<div class="commands__com commands__standart commands__show">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">help</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>help [ число ]</code>
+							<p class="commands__desc">Отображает по страницам все доступные команды на сервере</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>help 5</code> <code>help 6</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Не отбражает все команды</p>
+							<p class="commands__desc">В разделах между командой и описанием нет пробела</p>
+							<p class="commands__desc">В разделах на ПК в названии появляется черная полоска в начале</p>
+							<p class="commands__desc">Слово <b>котегорий</b> когда правильно должно быть <b>категорий</b></p>
+						</div>
+						<div class="commands__block commands__block-warns">
+							<div class="commands__header">ХЗ</div>
+							<p class="commands__desc">Мне сказали сделать этот блок</p>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__standart commands__show">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">serverinfo</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>serverinfo</code>
+							<p class="commands__desc">Выводит информацию о создателе, количеству участников и доступные емодзи</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>serverinfo</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Не всегда отображает создателя сервера</p>
+							<p class="commands__desc">Количество ролей на 1 меньше чем команада отображает</p>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__standart commands__show">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">botinfo</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>botinfo</code>
+							<p class="commands__desc">Выводит информацию пинге, количеству команд и серверов, версию, приглашение и время работы</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>botinfo</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Не пишет текущее время в низу сообщения, как в остальных командах</p>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__standart commands__show">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">ping</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>ping</code>
+							<p class="commands__desc">Выводит пинг сервера бота и апи дискорда</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>ping</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Иногда не может найти пинг сервера бота</p>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__standart commands__show">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">invite</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>invite</code>
+							<p class="commands__desc">Отбражает ссылку на приглошение бота и на сервер поддержки</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>invite</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Ссылки на приглошение бота и на сервер перепутаны</p>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__standart commands__show">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">uptime</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>uptime</code>
+							<p class="commands__desc">Отбражает время непрерывной работы бота</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>uptime</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Во вкладке <b>всего</b> текст на английском</p>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__standart commands__show">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">clickerlink</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>clickerlink</code>
+							<p class="commands__desc">Отбражает описание сайтовой игры кликер</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>clickerlink</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Ссылка на источник не работает</p>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__admin">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">ban</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>ban < @участник > [ причина ]</code>
+							<p class="commands__desc">Банит участника или бота с сервера</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>ban @cat ты ПлАхОй</code> <code>ban @dog</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Можно забанить самого себя, но бот нечего не сделает</p>
+							<p class="commands__desc">Бот может попытаться забанить самого себя, но нечего не сделает</p>
+							<p class="commands__desc">Если нет у бота нужного разререшения, он нечего не сделает</p>
+							<p class="commands__desc">Через бота нельзя указать причину бана</p>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__admin">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">unban</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>unban < @участник ></code>
+							<p class="commands__desc">Возвращает участника с списка банов сервера</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>uban @cat</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Этой комманды не существует</p>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__admin">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">warn</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>warn < @участник></code>
+							<p class="commands__desc">Дает предупреждение участнику. После 3 нарушений участник попадает в список банов</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>warn @cat</code> <code>warn @dog ты нарушил пункт 15</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Можно прописать себе варн</p>
+							<p class="commands__desc">Если бот не может тебя выгнать при получении 3/3 варнов то он отправит пустое сообщение</p>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__admin">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">warns</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>warns [ @участник ] </code>
+							<p class="commands__desc">Посмотреть сколько раз тебе или давали варн</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>warns</code> <code>warns @cat</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Если не указать пользователя, бот должен показать варны отправителя сообщения</p>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__admin">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">unwarn</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>unwarn < @участник></code>
+							<p class="commands__desc">Убирает предупреждение участнику</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>unwarn @cat</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Можно убрать у себя варн</p>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__admin">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">clear</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>clear < количество></code>
+							<p class="commands__desc">Убирает указаное количество сообщений. Количество может быть от 1 до 100 сообщений</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>clear 50</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Нет защиты на проверку <b>typeof string</b></p>
+							<p class="commands__desc">Нет пробела после точки</p>
+							<p class="commands__desc">Можно указать как количество число 0</p>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__admin">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">kick</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>kick < @участник></code>
+							<p class="commands__desc">Кикает участника или бота сервера</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>kick @cat ты плАхой</code> <code>kick @dog</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Можно выгнать самого себя, но бот нечего не сделает</p>
+							<p class="commands__desc">Бот может попытаться выгнать самого себя, но нечего не сделает</p>
+							<p class="commands__desc">Если нет у бота нужного разререшения, н нечего не скажет</p>
+							<p class="commands__desc">Через бота нельзя указать причину выгона</p>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__dev">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">idea</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>idea < идея></code>
+							<p class="commands__desc">Посылает идею для бота на сервер разработчика</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>idea Сделай настройку префикса</code>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__dev">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">bug</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>bug < баг></code>
+							<p class="commands__desc">Посылает описание бага бота на сервер разработчика</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>bug Черная полоска в названии раздела</code>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__dev">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">recall</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>recall < отзыв></code>
+							<p class="commands__desc">Посылает отзыв о боте на сервер разработчика</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>recall 7/10 Неплохой бот, но еще сырой</code>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__dev">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">plaint</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>plaint < жалоба></code>
+							<p class="commands__desc">Посылает жалоба о боте на сервер разработчика</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>plaint Бот удалил мой сервер</code>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__economics">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">daily</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>daily</code>
+							<p class="commands__desc">Забрать зарплату своей роли</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>daily</code>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__economics">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">balance</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>balance [ @пользователь ]</code>
+							<p class="commands__desc">Посмотреть свой или другого участника баланс</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>balance</code> <code>balance @cat</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Если не указать пользователя, бот должен показать баланс отправителя сообщения</p>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__games">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">click</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>click</code>
+							<p class="commands__desc">Кликнуть и получить 1$ в игре кликер</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>click</code>
+						</div>
+					</div>
+				</div>
+				<div class="commands__com commands__games">
+					<div class="commands__top" onclick="ReadMore(this, 'commands__bottom-active')">c-balance</div>
+					<div class="commands__bottom">
+						<div class="commands__block">
+							<div class="commands__header">Использование</div>
+							<code>c-balance [ @участник ]</code>
+							<p class="commands__desc">Посмотреть свой или чужой баланс в игре кликер</p>
+						</div>
+						<div class="commands__block">
+							<div class="commands__header">Пример</div>
+							<code>c-balance</code> <code>c-balance @cat</code>
+						</div>
+						<div class="commands__block commands__block-bugs">
+							<div class="commands__header">Баги</div>
+							<p class="commands__desc">Если не указать пользователя, бот должен показать баланс отправителя сообщения</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup">
+    	<div class="popup__window">
+    		<h2 class="popup__title">Внимание!</h2>
+    		<p>Ваша версия браузера устаревшая, на сайте могут быть проблемы</p>
+    		<div onclick="popupToggle()" class="popup__btn">Закрыть</a>
+    	</div>
+    </div>
+	<script src="script.js"></script>
+</body>
+
+</html>
